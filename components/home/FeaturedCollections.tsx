@@ -15,25 +15,19 @@ export function FeaturedCollections() {
       <Container size="wide">
         <div className="grid gap-12 lg:grid-cols-12 lg:items-start">
           <div className="lg:sticky lg:top-28 lg:col-span-4">
-            <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-dark-brown">
-              Collections / 2026
-            </p>
-            <h2 className="mt-7 font-display text-[50px] font-light leading-[1.02] tracking-[0.08em] text-ink md:text-[72px]">
-              NAIL
+            <p className="hanu-eyebrow">Bộ sưu tập mẫu</p>
+            <h2 className="hanu-heading mt-7 text-[50px] md:text-[74px]">
+              Chọn theo
               <br />
-              STORIES
+              phong cách
             </h2>
             <div className="mt-8 h-px w-20 bg-dark-brown/55" />
-            <p className="mt-8 max-w-[330px] text-[14px] font-light leading-[1.9] text-charcoal/70">
-              5 collection kể 5 ngôn ngữ thẩm mỹ khác nhau: chrome, crystal,
-              glass, nude và marble. Mỗi set được điều chỉnh theo dáng tay,
-              tone da và dịp sử dụng.
+            <p className="hanu-copy mt-8 max-w-[360px]">
+              Mỗi bộ sưu tập gom các mẫu cùng mood để khách dễ chọn: nude, chrome,
+              marble, cô dâu hoặc custom theo ảnh riêng.
             </p>
-            <Link
-              href="/collections"
-              className="mt-10 inline-flex border-b border-ink pb-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink"
-            >
-              View all collections
+            <Link href="/collections" className="hanu-text-link mt-10">
+              Xem bộ sưu tập
             </Link>
           </div>
 
@@ -62,22 +56,22 @@ export function FeaturedCollections() {
                       </div>
                       <div className="flex min-h-[260px] flex-col p-7 md:p-9">
                         <div className="flex items-start justify-between gap-6">
-                          <p className="font-display text-[54px] italic leading-none text-brown-dark/65">
+                          <p className="hanu-heading text-[46px] text-brown-dark/70">
                             {collection.number}
                           </p>
                           <ArrowUpRight
-                            size={18}
-                            strokeWidth={1.4}
+                            size={20}
+                            strokeWidth={1.7}
                             className="text-dark-brown transition-transform group-hover:translate-x-1 group-hover:-translate-y-1"
                           />
                         </div>
-                        <h3 className="mt-8 font-display text-[38px] font-light leading-none text-ink">
+                        <h3 className="hanu-heading mt-8 text-[36px]">
                           {collection.title}
                         </h3>
-                        <p className="mt-3 text-[10px] uppercase tracking-[0.24em] text-dark-brown">
+                        <p className="mt-3 text-[13px] font-extrabold uppercase tracking-[0.1em] text-dark-brown">
                           {collection.mood}
                         </p>
-                        <p className="mt-5 line-clamp-3 text-[14px] font-light leading-[1.75] text-charcoal/68">
+                        <p className="mt-5 line-clamp-3 text-[15px] font-medium leading-[1.75] text-charcoal/70">
                           {collection.description}
                         </p>
                         <div className="mt-auto flex items-end justify-between pt-8">
@@ -85,14 +79,12 @@ export function FeaturedCollections() {
                             {collection.colors.slice(0, 4).map((color) => (
                               <span
                                 key={color.name}
-                                className="h-3 w-3 rounded-full border border-charcoal/10"
+                                className="h-3.5 w-3.5 rounded-full border border-charcoal/10"
                                 style={{ background: color.hex }}
                               />
                             ))}
                           </div>
-                          <p className="font-display text-[25px] leading-none text-ink">
-                            {collection.priceFrom}
-                          </p>
+                          <p className="hanu-heading text-[25px]">{collection.priceFrom}</p>
                         </div>
                       </div>
                     </div>

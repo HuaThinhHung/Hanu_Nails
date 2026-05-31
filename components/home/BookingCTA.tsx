@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { CalendarDays, MessageCircle } from "lucide-react";
 import { Container } from "@/components/ui/Container";
 import { MoodboardImage } from "@/components/ui/MoodboardImage";
 
@@ -17,32 +18,26 @@ export function BookingCTA() {
             transition={{ duration: 0.85, ease: [0.22, 1, 0.36, 1] }}
             className="flex flex-col justify-center p-8 md:p-12 lg:col-span-5"
           >
-            <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-dark-brown">
-              Begin your experience
-            </p>
-            <h2 className="mt-7 font-display text-[48px] font-light leading-[1.08] tracking-[0.08em] text-ink md:text-[76px]">
-              BOOK
+            <p className="hanu-eyebrow">Đặt lịch làm nail</p>
+            <h2 className="hanu-heading mt-7 text-[48px] md:text-[78px]">
+              Gửi mẫu
               <br />
-              YOUR
+              tiệm tư vấn
               <br />
-              APPOINTMENT
+              trước
             </h2>
-            <p className="mt-8 max-w-[390px] text-[14px] font-light leading-[1.9] text-charcoal/70">
-              Gửi trước mẫu yêu thích, ngày giờ và phong cách bạn muốn. HANU sẽ
-              tư vấn collection, thời lượng và mức giá phù hợp trước khi đến studio.
+            <p className="hanu-copy mt-8 max-w-[460px]">
+              Khách gửi mẫu yêu thích, ngày giờ mong muốn và ghi chú về màu hoặc
+              độ dài móng. HANU liên hệ lại để xác nhận lịch và giá dự kiến.
             </p>
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <Link
-                href="/booking"
-                className="inline-flex justify-center border border-ink px-8 py-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink transition-colors hover:bg-ink hover:text-cream"
-              >
-                Booking
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row">
+              <Link href="/booking" className="hanu-button hanu-button-primary gap-2">
+                <CalendarDays size={17} strokeWidth={1.7} />
+                Đặt lịch
               </Link>
-              <a
-                href="https://zalo.me"
-                className="inline-flex justify-center border-b border-ink px-1 py-3 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink"
-              >
-                Contact Zalo
+              <a href="https://zalo.me" className="hanu-button hanu-button-secondary gap-2">
+                <MessageCircle size={17} strokeWidth={1.7} />
+                Chat Zalo
               </a>
             </div>
           </motion.div>

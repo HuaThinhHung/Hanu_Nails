@@ -50,6 +50,18 @@ Lưu ý: moodboard thiên beige/cream, nhưng khi lên web cần cân bằng b�
 
 ### Typography
 
+Quyết định cập nhật:
+
+- Font chính toàn website: `Quicksand`.
+- Không dùng lại `Manrope`, `Plus Jakarta Sans`, `Nunito Sans` cho body vì cảm giác còn cứng so với ngành nails/beauty.
+- Không dùng serif mảnh cho heading chính trong giai đoạn này vì dễ làm chữ Việt khó đọc trên mobile.
+- `Quicksand` có nét bo tròn, mềm, thân thiện, hợp website nails hơn và vẫn rõ dấu tiếng Việt.
+- Body mặc định nâng lên khoảng `18.5px`, line-height khoảng `1.82`.
+- Các chữ nhỏ như menu, label, tag, CTA được nâng size để khách đọc dễ hơn trên điện thoại.
+- Letter-spacing giảm lại, tránh kiểu chữ bị kéo quá rộng làm tiếng Việt khó nhìn.
+- Đã thêm lớp typography/CTA dùng chung: `hanu-eyebrow`, `hanu-heading`, `hanu-copy`, `hanu-button`, `hanu-text-link`.
+- Homepage, trang mẫu nail và booking đang được nâng theo hệ này để tránh mỗi component một kiểu chữ.
+
 Moodboard dùng serif cao, mảnh, letter spacing rộng.
 
 Đề xuất:

@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { CalendarDays, CheckCircle2, Clock, MessageCircle } from "lucide-react";
-import { LuxuryButton } from "@/components/ui/LuxuryButton";
 
 const services = [
   "Chọn theo mẫu nail có sẵn",
@@ -12,7 +11,7 @@ const services = [
   "Tư vấn khác",
 ];
 
-export function BookingForm() {
+export function BookingForm({ initialReference = "" }: { initialReference?: string }) {
   const [sent, setSent] = useState(false);
 
   function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
@@ -24,8 +23,8 @@ export function BookingForm() {
   return (
     <form onSubmit={handleSubmit} className="border border-line bg-cream p-6 md:p-8">
       {sent && (
-        <div className="mb-6 flex items-start gap-3 bg-soft-white p-4 text-[14px] text-charcoal/75">
-          <CheckCircle2 size={18} strokeWidth={1.5} className="mt-1 text-dark-brown" />
+        <div className="mb-6 flex items-start gap-3 border border-line bg-soft-white p-4 text-[16px] font-medium text-charcoal/78">
+          <CheckCircle2 size={20} strokeWidth={1.7} className="mt-1 text-dark-brown" />
           <p>
             HANU đã ghi nhận yêu cầu đặt lịch. Ở bản chính thức, thông tin này sẽ
             được gửi về Zalo, email hoặc Google Sheets để tiệm xác nhận lịch.
@@ -59,8 +58,8 @@ export function BookingForm() {
         <Field label="Ngày mong muốn">
           <div className="relative">
             <CalendarDays
-              size={16}
-              strokeWidth={1.5}
+              size={18}
+              strokeWidth={1.7}
               className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-dark-brown"
             />
             <input name="date" required type="date" className={inputClass} />
@@ -69,8 +68,8 @@ export function BookingForm() {
         <Field label="Khung giờ">
           <div className="relative">
             <Clock
-              size={16}
-              strokeWidth={1.5}
+              size={18}
+              strokeWidth={1.7}
               className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-dark-brown"
             />
             <select name="time" required className={inputClass}>
@@ -97,6 +96,7 @@ export function BookingForm() {
       <Field label="Mẫu muốn làm / link ảnh tham khảo" className="mt-5">
         <input
           name="reference"
+          defaultValue={initialReference}
           placeholder="Ví dụ: Pearl chrome ánh ngọc hoặc link ảnh"
           className={inputClass}
         />
@@ -112,14 +112,14 @@ export function BookingForm() {
       </Field>
 
       <div className="mt-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-        <LuxuryButton type="submit" variant="primary" size="md" withArrow>
+        <button type="submit" className="hanu-button hanu-button-primary">
           Gửi yêu cầu đặt lịch
-        </LuxuryButton>
+        </button>
         <a
           href="https://zalo.me"
-          className="inline-flex items-center gap-2 text-[12px] font-medium uppercase tracking-[0.2em] text-dark-brown hover:text-ink"
+          className="inline-flex items-center gap-2 text-[14px] font-extrabold uppercase tracking-[0.1em] text-dark-brown hover:text-ink"
         >
-          <MessageCircle size={15} strokeWidth={1.5} />
+          <MessageCircle size={17} strokeWidth={1.7} />
           Chat Zalo
         </a>
       </div>
@@ -128,7 +128,7 @@ export function BookingForm() {
 }
 
 const inputClass =
-  "min-h-12 w-full border border-line bg-white px-4 py-3 text-[14px] text-ink outline-none transition-colors placeholder:text-charcoal/40 focus:border-dark-brown";
+  "min-h-13 w-full border border-line bg-white px-4 py-3.5 text-[16px] font-semibold text-ink outline-none transition-colors placeholder:text-charcoal/42 focus:border-dark-brown";
 
 function Field({
   label,
@@ -141,7 +141,7 @@ function Field({
 }) {
   return (
     <label className={className}>
-      <span className="mb-2 block text-[11px] font-medium uppercase tracking-[0.22em] text-dark-brown">
+      <span className="mb-2 block text-[13px] font-extrabold uppercase tracking-[0.1em] text-dark-brown">
         {label}
       </span>
       {children}

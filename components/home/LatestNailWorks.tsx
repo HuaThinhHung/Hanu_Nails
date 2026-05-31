@@ -5,30 +5,35 @@ import { nailWorks } from "@/data/nailWorks";
 
 export function LatestNailWorks() {
   const works = nailWorks.slice(0, 6);
+  const realCount = nailWorks.filter((work) => work.source === "real").length;
+  const collectionCount = nailWorks.filter((work) => work.source === "collection").length;
 
   return (
-    <section className="bg-cream py-20 md:py-28">
+    <section id="mau-nail-moi" className="bg-cream py-20 md:py-28">
       <Container size="wide">
         <div className="mb-12 grid gap-8 md:grid-cols-12 md:items-end">
           <div className="md:col-span-7">
-            <p className="text-[10px] font-medium uppercase tracking-[0.28em] text-dark-brown">
-              Tác phẩm chụp thật
-            </p>
-            <h2 className="mt-5 font-display text-[48px] font-light leading-[1.05] tracking-[0.08em] text-ink md:text-[72px]">
-              MẪU NAIL
+            <p className="hanu-eyebrow">Mẫu nail mới</p>
+            <h2 className="hanu-heading mt-5 text-[48px] md:text-[74px]">
+              Chọn mẫu
               <br />
-              MỚI LÀM
+              trước khi đặt lịch
             </h2>
           </div>
           <div className="md:col-span-4 md:col-start-9">
-            <p className="text-[14px] font-light leading-[1.85] text-charcoal/70">
-              Khu này dùng để đăng các bộ nail vợ Hưng làm thật và chụp lên. Khách
-              xem mẫu, hỏi nhanh qua Zalo hoặc đặt lịch theo mẫu đã chọn.
+            <p className="hanu-copy">
+              Khu này gom cả mẫu tham khảo và tác phẩm thật. Khách xem nhanh, bấm
+              chi tiết hoặc đặt lịch theo đúng mẫu đã chọn.
             </p>
-            <Link
-              href="/mau-nail"
-              className="mt-6 inline-flex border-b border-ink pb-1 text-[10px] font-semibold uppercase tracking-[0.24em] text-ink"
-            >
+            <div className="mt-5 flex flex-wrap gap-2 text-[14px] font-bold text-charcoal/72">
+              <span className="border border-line bg-soft-white px-3 py-1">
+                {collectionCount} mẫu tham khảo
+              </span>
+              <span className="border border-line bg-soft-white px-3 py-1">
+                {realCount} tác phẩm thật
+              </span>
+            </div>
+            <Link href="/mau-nail" className="hanu-text-link mt-7">
               Xem tất cả mẫu
             </Link>
           </div>

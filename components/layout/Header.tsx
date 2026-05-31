@@ -44,7 +44,7 @@ export function Header() {
             scrolled ? "h-16" : "h-[76px]"
           )}
         >
-          <Logo size={scrolled ? "sm" : "md"} />
+          <Logo size="md" />
 
           <nav className="hidden justify-center lg:flex">
             <div className="flex items-center gap-10">
@@ -75,7 +75,7 @@ export function Header() {
               href="/booking"
               className="hidden border-b border-ink pb-1 text-[10px] font-medium uppercase tracking-[0.24em] text-ink transition-colors hover:text-dark-brown md:inline-flex"
             >
-              Booking
+              Đặt lịch
             </Link>
             <button
               type="button"

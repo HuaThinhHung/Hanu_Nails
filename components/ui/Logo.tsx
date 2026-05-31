@@ -8,9 +8,24 @@ type Props = {
 };
 
 const sizes = {
-  sm: { wordmark: "text-[20px]", sub: "text-[7px] tracking-[0.45em]" },
-  md: { wordmark: "text-[28px]", sub: "text-[8px] tracking-[0.45em]" },
-  lg: { wordmark: "text-[40px]", sub: "text-[10px] tracking-[0.5em]" },
+  sm: {
+    wordmark: 24,
+    sub: 9,
+    wordSpacing: "0.16em",
+    subSpacing: "0.34em",
+  },
+  md: {
+    wordmark: 32,
+    sub: 10,
+    wordSpacing: "0.16em",
+    subSpacing: "0.36em",
+  },
+  lg: {
+    wordmark: 44,
+    sub: 12,
+    wordSpacing: "0.18em",
+    subSpacing: "0.38em",
+  },
 };
 
 export function Logo({ className, variant = "dark", size = "md" }: Props) {
@@ -18,20 +33,24 @@ export function Logo({ className, variant = "dark", size = "md" }: Props) {
   const color = variant === "light" ? "text-cream" : "text-ink";
 
   return (
-    <Link href="/" className={cn("inline-flex flex-col items-start leading-none", color, className)}>
+    <Link href="/" className={cn("inline-flex flex-col items-center leading-none", color, className)}>
       <span
-        className={cn(
-          "font-display font-light tracking-[0.18em]",
-          s.wordmark
-        )}
+        className="font-body font-semibold"
+        style={{
+          fontSize: `${s.wordmark}px`,
+          letterSpacing: s.wordSpacing,
+          lineHeight: 0.9,
+        }}
       >
         HANU
       </span>
       <span
-        className={cn(
-          "mt-1 font-body font-medium uppercase opacity-70",
-          s.sub
-        )}
+        className="mt-1 font-body font-bold uppercase opacity-70"
+        style={{
+          fontSize: `${s.sub}px`,
+          letterSpacing: s.subSpacing,
+          lineHeight: 1,
+        }}
       >
         Nails
       </span>
