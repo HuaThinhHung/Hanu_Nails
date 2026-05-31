@@ -43,7 +43,8 @@ export function MoodboardImage({
         src="/Hanu.png"
         alt={alt}
         fill
-        priority={priority}
+        loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "auto"}
         sizes="(max-width: 768px) 100vw, 50vw"
         className="object-cover"
         style={{ objectPosition: cropPosition[crop] }}

@@ -43,7 +43,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
+    <html lang="vi" data-scroll-behavior="smooth">
       <body className="min-h-screen bg-cream text-ink antialiased">
         <Header />
         <main id="top" className="relative">{children}</main>
